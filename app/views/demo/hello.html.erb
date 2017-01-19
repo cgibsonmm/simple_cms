@@ -1,2 +1,15 @@
-<% provide(:title, 'Hello') %> 
+<% provide(:title, 'Hello') %>
 <h1>Hello world from hello!</h1>
+
+<% @array.each do |n| %>
+  <%= n %><br />
+<% end %>
+
+<%= link_to('click me', demo_index_path) %>
+
+
+
+ID: <%= @id %><br>
+ID: <%= params[:id] %> <br>
+PAGE: <%= @page %>
+Next PAGE <%= @page.to_i + 1 %>
