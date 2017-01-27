@@ -1,0 +1,18 @@
+<%= link_to('<<< Back to Pages', pages_path) %>
+<div class="show">
+  <h2>Show Page</h2>
+  <table class="show-table">
+    <th>Page</th>
+    <th>permalink</th>
+    <th>position</th>
+    <th>Created At</th>
+    <th>Edit At</th>
+    <tr>
+      <td><%= @page.name %></td>
+      <td><%= @page.permalink %></td>
+      <td><%= @page.position %></td>
+      <td><%= @page.created_at %></td>
+      <td><%= @page.updated_at %></td>
+    </tr>
+  </table>
+</div>

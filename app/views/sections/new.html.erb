@@ -1,0 +1,30 @@
+<%= link_to('<<< Back to Sections', sections_path) %>
+<h2>Create new Section</h2>
+<%= form_for(@section) do |f| %>
+<table>
+  <tr>
+    <td>name</td>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <td>Content type</td>
+    <td><%= f.text_field(:content_type) %></td>
+  </tr>
+  <tr>
+    <td>Content</td>
+    <td><%= f.text_field(:content) %></td>
+  </tr>
+  <tr>
+    <td>Visable</td>
+    <td><%= f.text_field(:visable) %></td>
+  </tr>
+  <tr>
+    <td>Page ID</td>
+    <td><%= f.text_field(:page_id) %></td>
+  </tr>
+  <tr>
+    <td>Submit</td>
+    <td><%= f.submit('Save') %></td>
+  </tr>
+
+<% end  %>

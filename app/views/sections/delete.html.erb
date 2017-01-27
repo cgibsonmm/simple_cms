@@ -1,0 +1,5 @@
+<h2>Delete <%= @section.name %></h2>
+<p>Are you sure you want to delete <%= @section.name %>?</p>
+<%= form_for(@section, method: 'delete') do |f| %>
+  <%= f.submit('Delete', class: 'Delete-button') %>
+<% end  %>

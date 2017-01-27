@@ -1,0 +1,19 @@
+
+<%= link_to('<<< Back to Sections', sections_path) %>
+<div class="show">
+  <h2>Show section</h2>
+  <table class="show-table">
+    <th>section</th>
+    <th>content_type</th>
+    <th>content</th>
+    <th>Created At</th>
+    <th>Edit At</th>
+    <tr>
+      <td><%= @section.name %></td>
+      <td><%= @section.content_type %></td>
+      <td><%= @section.content %></td>
+      <td><%= @section.created_at %></td>
+      <td><%= @section.updated_at %></td>
+    </tr>
+  </table>
+</div>

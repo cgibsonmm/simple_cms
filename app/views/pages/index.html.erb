@@ -1,0 +1,26 @@
+<%= link_to('Create new Page', new_page_path, class: 'New-button') %>
+<div class='pages-table'>
+  <table>
+    <tr>
+      <th>Page</th>
+      <th>Position</th>
+      <th>Permalink</th>
+      <th>Visible</th>
+      <th>Actions</th>
+    </tr>
+    <% @pages.each do |page| %>
+    <tr>
+      <td><%= page.name %></td>
+      <td><%= page.position %></td>
+      <td><%= page.permalink %></td>
+      <td><%= page.visible %></td>
+      <td>
+        <%= link_to('Show', page_path(page)) %>
+        <%= link_to('Edit', edit_page_path(page)) %>
+        <%= link_to('Delete', delete_page_path(page)) %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

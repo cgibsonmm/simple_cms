@@ -1,0 +1,26 @@
+<%= link_to('Create new Section', new_section_path, class: 'New-button') %>
+<div class='Sections-table'>
+  <table>
+    <tr>
+      <th>Section</th>
+      <th>Position</th>
+      <th>content_type</th>
+      <th>Visible</th>
+      <th>Actions</th>
+    </tr>
+    <% @sections.each do |section| %>
+    <tr>
+      <td><%= section.name %></td>
+      <td><%= section.position %></td>
+      <td><%= section.content_type %></td>
+      <td><%= section.visable %></td>
+      <td>
+        <%= link_to('Show', section_path(section)) %>
+        <%= link_to('Edit', edit_section_path(section)) %>
+        <%= link_to('Delete', delete_section_path(section)) %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>
