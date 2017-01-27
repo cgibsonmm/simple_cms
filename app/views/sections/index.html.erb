@@ -13,7 +13,7 @@
       <td><%= section.name %></td>
       <td><%= section.position %></td>
       <td><%= section.content_type %></td>
-      <td><%= section.visable %></td>
+      <td><%= status_tag(section.visable) %></td>
       <td>
         <%= link_to('Show', section_path(section)) %>
         <%= link_to('Edit', edit_section_path(section)) %>

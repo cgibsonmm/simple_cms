@@ -1,12 +1,13 @@
 module ApplicationHelper
 
-  # provide title on page basis
-  def full_title(title = '')
-    base_title = 'SimpleCms'
-    if title.empty?
-      base_title
+  def status_tag(boolean, options={})
+    options[:true_text] ||= ''
+    options[:false_text] ||= ''
+
+    if boolean
+      content_tag(:span, options[:true_text], class: 'status true')
     else
-      base_title + " | " + title
+      content_tag(:span, options[:false_text], class: 'status false')
     end
   end
 end

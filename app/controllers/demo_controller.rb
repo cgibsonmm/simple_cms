@@ -1,5 +1,4 @@
 class DemoController < ApplicationController
-  layout :false
 
   def index
     render 'index'
@@ -9,5 +8,12 @@ class DemoController < ApplicationController
     @array = (1..5).to_a
     @id = params['id']
     @page = params[:page]
+  end
+
+  def escape_outpt
+  end
+
+  def calendar
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 end
