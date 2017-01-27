@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
 
   layout 'admin'
-  
+
   def index
     @sections = Section.all
   end
@@ -34,6 +34,7 @@ class SectionsController < ApplicationController
       flash[:notice] = "Section Update"
       redirect_to(section_path(@section))
     else
+      flash[:notice] = 'Invalid Page ID'
       render('edit')
     end
   end

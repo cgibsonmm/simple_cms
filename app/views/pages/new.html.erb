@@ -1,29 +1,6 @@
 <h2>Create new Page</h2>
 <%= form_for(@page) do |f| %>
-<table>
-  <tr>
-    <td>name</td>
-    <td><%= f.text_field(:name) %></td>
-  </tr>
-  <tr>
-    <td>Permalink</td>
-    <td><%= f.text_field(:permalink) %></td>
-  </tr>
-  <tr>
-    <td>Position</td>
-    <td><%= f.text_field(:position) %></td>
-  </tr>
-  <tr>
-    <td>Visable</td>
-    <td><%= f.text_field(:visible) %></td>
-  </tr>
-  <tr>
-    <td>Section ID</td>
-    <td><%= f.text_field(:subject_id) %></td>
-  </tr>
-  <tr>
-    <td>Submit</td>
-    <td><%= f.submit('Save') %></td>
-  </tr>
+
+  <%= render(partial: 'form', locals:{f: f}) %>
 
 <% end  %>
