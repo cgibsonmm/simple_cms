@@ -12,6 +12,8 @@ class SectionsController < ApplicationController
 
   def new
     @section = Section.new
+    @section.visable = true
+    @pages = Page.all
   end
 
   def create
@@ -26,6 +28,7 @@ class SectionsController < ApplicationController
 
   def edit
     @section = Section.find(params[:id])
+    @section.visable = true
   end
 
   def update

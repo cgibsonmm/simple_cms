@@ -5,11 +5,11 @@
 </tr>
 <tr>
   <th>Position</th>
-  <td><%= f.text_field(:position) %></td>
+  <td><%= f.select(:position, 1..@subject_count) %></td>
 </tr>
 <tr>
-  <th>Visable</th>
-  <td><%= f.text_field(:visible) %></td>
+  <th>Visible</th>
+  <td><%= f.check_box(:visible) %></td>
 </tr>
   <tr>
     <td><%= f.submit('Create Subject') %></td>
