@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <%= stylesheet_link_tag 'admins', media: 'all' %>
+  <%= stylesheet_link_tag('admins', media: 'all') %>
 </head>
 <body
 
+  <div id='main'>
+    <%= render 'layouts/flash' %>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
 
-  <%= render 'application/flash' %>
-  <!-- Before yeild -->
-  <%= yield %>
-  <!-- After yeild -->
+  <footer id="footer">
+    <p>Footer</p>
+  </footer>
 
 </body>
 </html>

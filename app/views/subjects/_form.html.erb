@@ -7,11 +7,11 @@
 </tr>
 <tr>
   <th>Position</th>
-  <td><%= f.text_field(:position) %></td>
+  <td><%= f.select(:position, 1..@subject_count) %></td>
 </tr>
 <tr>
-  <th>Visable</th>
-  <td><%= f.text_field(:visible) %></td>
+  <th>Visible</th>
+  <td><%= f.check_box(:visible) %></td>
 </tr>
 <tr>
   <%= f.datetime_select(:created_at, selected: Date.today, start_year: Date.today.year, end_year: Date.today.year+10, start_hour: Time.now.hour) %>
