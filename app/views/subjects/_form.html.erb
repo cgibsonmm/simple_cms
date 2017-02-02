@@ -1,3 +1,5 @@
+<%= error_messages_for(f.object) %>
+
 <table summary='Subjects form fields'>
 <tr>
   <th>Name</th>
@@ -10,6 +12,9 @@
 <tr>
   <th>Visable</th>
   <td><%= f.text_field(:visible) %></td>
+</tr>
+<tr>
+  <%= f.datetime_select(:created_at, selected: Date.today, start_year: Date.today.year, end_year: Date.today.year+10, start_hour: Time.now.hour) %>
 </tr>
   <tr>
     <td><%= f.submit('Create Subject') %></td>

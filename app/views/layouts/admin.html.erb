@@ -5,16 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-
-  <style>
-    span.status {display: block; width: 40px; height: 10px; margin: 0.25em auto; padding: 0; border: 1px solid #000000; border-radius: 2px;}
-    span.status.true {background: green; color: green;}
-    span.status.false {background: red; color: red;}
-  </style>
+  <%= stylesheet_link_tag 'admins', media: 'all' %>
 </head>
 <body
 
-  <%= render 'layouts/flash' %>
+
+  <%= render 'application/flash' %>
   <!-- Before yeild -->
   <%= yield %>
   <!-- After yeild -->
