@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'access/menu'
+
+  get 'access/login'
+
   root 'demo#index'
 
   resources :subjects do

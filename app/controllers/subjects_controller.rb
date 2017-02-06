@@ -1,8 +1,10 @@
 class SubjectsController < ApplicationController
+  before_action :count_subjects, only: [:new, :create, :edit, :update]
 
   layout 'admin'
 
   def index
+    logger.debug('****** Testing the logger.******')
     @subjects = Subject.sorted
   end
 
@@ -12,7 +14,6 @@ class SubjectsController < ApplicationController
 
   def new
     @subject = Subject.new
-    @subject_count = Subject.count + 1
   end
 
   def create
@@ -21,14 +22,12 @@ class SubjectsController < ApplicationController
       flash[:notice] = "Subject was created."
       redirect_to(subjects_path)
     else
-      @subject_count = Subject.count + 1
       render('new')
     end
   end
 
   def edit
     @subject = Subject.find(params[:id])
-    @subject_count = Subject.count
   end
 
   def update
@@ -37,7 +36,6 @@ class SubjectsController < ApplicationController
       flash[:notice] = "Subject was Updated."
       redirect_to(subject_path(@subject))
     else
-      @subject_count = Subject.count
       render('edit')
     end
   end
@@ -59,4 +57,11 @@ class SubjectsController < ApplicationController
     params.require(:subject).permit(:name, :position, :visible, :created_at)
   end
 
+  def count_subjects
+    if params[:action] == 'new' || params[:action] == 'create'
+      @subject_count = Subject.count + 1
+    else
+      @subject_count = Subject.count
+    end
+  end
 end

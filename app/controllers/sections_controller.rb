@@ -1,4 +1,5 @@
 class SectionsController < ApplicationController
+  before_action :list_pages, only: [:new, :create, :edit, :update]
 
   layout 'admin'
 
@@ -13,7 +14,6 @@ class SectionsController < ApplicationController
   def new
     @section = Section.new
     @section.visable = true
-    @pages = Page.all
   end
 
   def create
@@ -57,5 +57,9 @@ class SectionsController < ApplicationController
 
   def section_params
     params.require(:section).permit(:page_id, :name, :position, :content_type, :content)
+  end
+
+  def list_pages
+    @pages = Page.all
   end
 end
