@@ -1,6 +1,6 @@
 module SectionsHelper
 
   def which_pages(pages)
-    pages.all.collect {|page| page.name}
+    pages.map { |page| [page.name, page.id] }
   end
 end

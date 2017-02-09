@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206120032) do
+ActiveRecord::Schema.define(version: 20170209151755) do
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name",      limit: 25
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170206120032) do
   create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "subject_id"
     t.string   "name"
-    t.integer  "permalink"
+    t.string   "permalink"
     t.integer  "position"
     t.boolean  "visible",    default: false
     t.datetime "created_at",                 null: false

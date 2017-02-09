@@ -1,0 +1,23 @@
+<%= link_to '<<< Back to Admin Area', admin_path %><br/> 
+<%= link_to 'Create new admin', new_admin_user_path %>
+<table class="admin_users">
+  <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>User Name</th>
+    <th>Created At</th>
+    <th>Options</th>
+  </tr>
+  <% @admin_users.each do  |admin| %>
+  <tr>
+    <td><%= admin.last_name %></td>
+    <td><%= admin.first_name %></td>
+    <td><%= admin.user_name %></td>
+    <td><%= admin.created_at.strftime('%m-%d-%y') %></td>
+    <td>
+      <%= link_to "Edit", edit_admin_user_path(admin) %>
+      <%= link_to 'Delete', delete_admin_user_path(admin) %>
+    </td>
+  </tr>
+  <% end %>
+</table>

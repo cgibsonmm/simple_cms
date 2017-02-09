@@ -1,0 +1,6 @@
+<h2>Delete <%= @admin_user.user_name %></h2>
+
+<p>are you sure you want to permently delete this admin</p>
+<%= form_for @admin_user, method: :delete do |f| %>
+  <%= f.submit "Delete" %>
+<% end %>

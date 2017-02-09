@@ -8,6 +8,8 @@ class AdminUser < ApplicationRecord
   has_many :section_edits
   has_many :sections, through: :section_edits
 
+scope :sorted, lambda { |column| order("LOWER(#{column})")}
+
   EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
   FORBIDDEN_USER_NAMES = %w(cgibsonmm suckatwat).freeze
 
@@ -28,6 +30,11 @@ class AdminUser < ApplicationRecord
 
   validate :user_name_is_allowed
   validate :no_new_users_on_monday, on: :create
+
+
+    def name
+      "#{first_name} #{last_name}"
+    end
 
   private
 
